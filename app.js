@@ -22,6 +22,36 @@ const hegazButton = document.getElementById('playHegaz');
 const rastButton = document.getElementById('playRast');
 const kurdButton = document.getElementById('playKurd');
 
+const showResButton = document.getElementById('show-res');
+const resDiv = document.getElementById('red-div');
+const next = document.getElementById('next');
+const playButoon = document.getElementById('paly-button');
+
+let chosenAud = '';
+let index = -1;
+
+let maqamatList = [
+  audioSaba,
+  audioNahawand,
+  audio3agam,
+  audioBayaty,
+  audioSika,
+  audioHegaz,
+  audioRast,
+  audioKurd,
+];
+let maqamatNamesList = [
+  'audioSaba',
+  'audioNahawand',
+  'audio3agam',
+  'audioBayaty',
+  'audioSika',
+  'audioHegaz',
+  'audioRast',
+  'audioKurd',
+];
+
+// playing
 sabaButton.addEventListener('click', function () {
   if (audioSaba.paused) {
     audioSaba.play();
@@ -92,4 +122,22 @@ kurdButton.addEventListener('click', function () {
     audioKurd.pause();
     audioKurd.currentTime = 0;
   }
+});
+
+showResButton.addEventListener('click', function () {
+  console.log('show res clicked');
+  resDiv.classList.toggle('hide');
+  resDiv.innerHTML = chosenAud;
+});
+playButoon.addEventListener('click', function () {
+  maqamatList[index].play();
+});
+
+next.addEventListener('click', function () {
+  if (index !== -1) {
+    resDiv.classList.toggle('hide');
+  }
+  index = Math.floor(Math.random() * (9 - 0 + 1) + 0);
+  chosenAud = maqamatNamesList[index].slice(5);
+  console.log('chosenAud', chosenAud);
 });
