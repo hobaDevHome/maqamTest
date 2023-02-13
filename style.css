@@ -62,7 +62,7 @@ ul {
 
 .cards__list {
   display: grid;
-  grid-template-columns: repeat(4, 120px);
+  grid-template-columns: repeat(3, 120px);
   grid-gap: 10px;
 }
 
