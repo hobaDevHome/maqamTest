@@ -166,3 +166,9 @@ ul {
   align-items: center;
   justify-content: space-between;
 }
+
+.cards {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
